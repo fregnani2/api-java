@@ -1,16 +1,18 @@
 # Transaction API
 ## Overview
-This API is used to manage transactions, it is possible to create clients, accounts and transactions. The API is RESTful and all responses are in JSON format.
+This API is used to manage transactions, it is possible to create clients and make transactions.
+It uses Spring Boot, Spring Data JPA, H2 database and Lombok.
 
 
 ## Getting Started
 ### Prerequisites
-- Java 17
+- Java JDK 17
 
-### Step 1: Configure IntelliJ IDEA
-1. Open IntelliJ IDEA.
-2. Click on `File` -> `New` -> `Project from Version Control`.
-3. Enter the URL of this repository and click `Clone`.
+### Step by step guide
+1. Clone the repository:
+2. Import the project into your favorite IDE.
+3. Install the maven dependencies.
+4. Run the project.
 
 ### Step 2: Install Dependencies
 1. Open the terminal and navigate to the project directory.
@@ -21,11 +23,11 @@ This API is used to manage transactions, it is possible to create clients, accou
 ## Base URL
 The base URL for all requests is `http://localhost:8080/clients`
 
-## Endpoints
+## V1 Endpoints
 ### Create a client
 #### Request
 ```http
-POST /clients
+POST /clients/v1
 ```
 ```json
 {
@@ -37,19 +39,19 @@ POST /clients
 ### Get all clients
 #### Request
 ```http
-GET /clients
+GET /clients/v1
 ```
 
 ### Get a client by account number
 #### Request
 ```http
-GET /clients/{accountNumber}
+GET /clients/v1/{accountNumber}
 ```
 
 ### Make a transaction
 #### Request
 ```http
-POST /clients/transfer
+POST /clients/v1/transfer
 ```
 ```json
 {
@@ -61,9 +63,28 @@ POST /clients/transfer
 ### Get Transaction by account number
 #### Request
 ```http
-GET /clients/transactions/{accountNumber}
+GET /clients/v1/transactions/{accountNumber}
 ```
 
+## V2 Endpoints
+### Update a client
+#### Request
+```http
+PUT /clients/v2/{id}
+```
+```json
+{
+    "name": "John Doe",
+    "accountNumber": "123",
+    "balance": 1000.0
+}
+```
+
+### Get All Transactions
+#### Request
+```http
+GET /clients/v2/transactions?fromAccountNumber=210&page=0&size=10
+```
 ## Insonmia Collection
 You can import the Insomnia collection [here](https://www.google.com/) to test the API.
 

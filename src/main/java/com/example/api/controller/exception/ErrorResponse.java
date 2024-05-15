@@ -7,6 +7,9 @@ import lombok.Setter;
 
 import java.time.Instant;
 
+/*
+    * Class responsible for the structure of the error response.
+ */
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
