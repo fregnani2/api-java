@@ -8,18 +8,12 @@ It uses Spring Boot, Spring Data JPA, H2 database and Lombok.
 ### Prerequisites
 - Java JDK 17
 
-### Step by step guide
-1. Clone the repository:
+### Step-by-step guide
+1. Clone the repository.
 2. Import the project into your favorite IDE.
 3. Install the maven dependencies.
 4. Run the project.
 
-### Step 2: Install Dependencies
-1. Open the terminal and navigate to the project directory.
-2. Run the following command to install the dependencies:
-```shell
-./mvnw clean install
-```
 ## Base URL
 The base URL for all requests is `http://localhost:8080/clients`
 
@@ -85,6 +79,6 @@ PUT /clients/v2/{id}
 ```http
 GET /clients/v2/transactions?fromAccountNumber=210&page=0&size=10
 ```
-## Insonmia Collection
-You can import the Insomnia collection [here](https://www.google.com/) to test the API.
+## Insomnia Collection
+You can download the Insomnia collection [here](https://github.com/fregnani2/api-java-test/blob/main/collection.json) to test the API.
 
